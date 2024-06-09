@@ -1,0 +1,46 @@
+### Flow Diagrams
+
+#### 1. Overall System Flow
+
+This diagram illustrates the high-level interaction between users, client interface, server, queues, and workers in the overall system flow.
+
+```plaintext
++----------+       +---------+       +---------+       +---------+
+|          |       |         |       |         |       |         |
+|  Users   | ----> |  Client | ----> |  Server | ----> |  Queue  | ----> Worker
+|          |       | Interface|       |         |       |         |
++----------+       +---------+       +---------+       +---------+
+                                        |                  |
+                                        |                  |
+                                        +------------------+
+```
+
+#### 2. Detailed Process Flow
+
+This detailed diagram outlines the process flow from receiving requests to processing and logging them.
+
+```plaintext
++---------+
+|         |
+|  Users  |
+|         |
++----+----+
+     |
+     v
++----+-------+         +---------+         +---------+         +---------+        +---------+
+|            |         |         |         |         |         |         |        |         |
+|  Client    |         |   API   |         |  Queue  |         |  Worker |        | Logging |
+| Interface  | ------> |  Server | ------> |  System | ------> | Process | -----> | System  |
+|            |         |         |         |         |         |         |        |         |
++---------+--+         +----+----+         +----+----+         +----+----+        +----+----+
+          |                |                    |                    |                 |
+          v                v                    v                    v                 v
+     +----+----+      +----+----+          +----+----+          +----+----+       +----+----+
+     |         |      |         |          |         |          |         |       |         |
+     | Request |      |  Route  |          | Enqueue |          | Process |       |  Log    |
+     |  from   |      | Handling|          | Request |          | Task    |       | Request |
+     | Client  |      |         |          |         |          |         |       |         |
+     +---------+      +---------+          +---------+          +---------+       +---------+
+```
+
+These flow diagrams provide a visual representation of how users interact with the system, how requests are processed, and how tasks are handled asynchronously using queues and workers.
