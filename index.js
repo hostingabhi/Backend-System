@@ -29,11 +29,13 @@ app.get('/metrics', async (req, res) => {
   res.end(await client.register.metrics());
 });
 
-const port = process.env.PORT || 3000;
-if (require.main === module) {
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend-system');
+});
+
+const port = process.env.PORT || 8000;
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
-}
 
 export default app;
