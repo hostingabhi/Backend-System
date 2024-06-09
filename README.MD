@@ -64,3 +64,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 #### Authors
 
 - Abhishek Prajapat
+
+### Postman Routes
+https://api.postman.com/collections/29369424-b929df02-16c4-48aa-93a2-cab6738ca7ee?access_key=PMAT-01HZZAAAPREWRJ85WB30TZAB1S
